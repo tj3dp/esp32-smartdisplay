@@ -106,8 +106,8 @@ esp_err_t gt911_reset(esp_lcd_touch_handle_t th)
         return res;
     }
 
-    // Wait at least 50ms
-    vTaskDelay(pdMS_TO_TICKS(50));
+    // Wait at least 50ms - tj3d: changed to 100ms (50ms were sometimes too fast)
+    vTaskDelay(pdMS_TO_TICKS(100));
 
     return ESP_OK;
 }
